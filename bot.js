@@ -1,6 +1,6 @@
 const { Telegraf } = require('telegraf')
 
-new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start((ctx) => {
   ctx.reply('Bot online 🔥')
