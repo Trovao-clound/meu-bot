@@ -7,6 +7,8 @@ bot.start((ctx) => {
 })
 
 bot.on('text', async (ctx) => {
+  if (ctx.from.id !== 1396548354) return
+  
   const texto = ctx.message.text
 
   await bot.telegram.sendMessage('@Promoraio', `🔥 NOVA OFERTA 🔥\n\n${texto}`)
