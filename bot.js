@@ -23,7 +23,7 @@ bot.on('text', async (ctx) => {
 
   await bot.telegram.sendMessage('@Promoraio', `💸 OFERTA IMPERDÍVEL 💸
 
-🎧 ${produto}
+🎁 ${produto}
 
 💰 R$ ${preco}
 
