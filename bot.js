@@ -11,16 +11,27 @@ bot.on('text', async (ctx) => {
 
   const texto = ctx.message.text
 
-  await bot.telegram.sendMessage('@Promoraio', `💸💸💸 OFERTA IMPERDÍVEL 💸💸💸
+  const partes = texto.split('|')
 
-${texto}
+  if (partes.length < 3) {
+    return ctx.reply('Formato errado 😅 usa: Produto | Preço | Link')
+  }
+
+  const produto = partes[0].trim()
+  const preco = partes[1].trim()
+  const link = partes[2].trim()
+
+  await bot.telegram.sendMessage('@Promoraio', `💸 OFERTA IMPERDÍVEL 💸
+
+🎧 ${produto}
+
+💰 R$ ${preco}
+
+🔗 ${link}
 
 🔥 Aproveite enquanto durar o estoque!
 
-🛒 Corra para garantir o seu!
-
-📢 Mais ofertas em:
-@Promoraio
+📢 @Promoraio
 
 ⚠️ Os preços podem mudar sem aviso.`)
 
